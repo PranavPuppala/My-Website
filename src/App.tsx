@@ -1,5 +1,5 @@
 import './index.css'
-import Portfolio from './app/page'
+import Portfolio from './Page'
 function App() {
   return (
     <>
