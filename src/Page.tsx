@@ -367,7 +367,7 @@ export default function Portfolio() {
 
             <div className="flex justify-center">
               <div className="hero-image-container">
-                <img src="public\Pranav.jpeg" alt="Pranav Puppala" className="hero-image" />
+                <img src="/Pranav.jpeg" alt="Pranav Puppala" className="hero-image" />
               </div>
             </div>
           </div>
