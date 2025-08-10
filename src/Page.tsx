@@ -47,21 +47,21 @@ export default function Portfolio() {
     {
       title: "ExpenseTracker",
       description: "Full-stack expenses tracking application",
-      image: "public/ExpenseTracker.jpeg",
+      image: "/ExpenseTracker.jpeg",
       tech: ["React", "Django", "PostgreSQL"],
       link: "https://github.com/PranavPuppala/ExpenseTracker-App"
     },
     {
       title: "Resumind",
       description: "AI powered resume analyzer",
-      image: "public/Resumind.jpeg",
+      image: "/Resumind.jpeg",
       tech: ["React"],
       link: "https://resume-analyzer-indol.vercel.app/"
     },
     {
       title: "Commerce-Electronics",
       description: "Full-stack e-commerce website",
-      image: "public/Commerce-Electronics.jpeg",
+      image: "/Commerce-Electronics.jpeg",
       tech: ["Next.js", "Prisma", "PostgreSQL"],
       link: "https://github.com/PranavPuppala/Ecommerce-Website"
     },
@@ -327,7 +327,7 @@ export default function Portfolio() {
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700"
                 onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'public/Pranav_Resume.pdf'; 
+                link.href = 'Pranav_Resume.pdf'; 
                 link.download = 'Pranav_Puppala_Resume.pdf';  
                 document.body.appendChild(link);
                 link.click();
