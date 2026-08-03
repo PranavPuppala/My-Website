@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Instagram, Linkedin, Download, Menu, X, ExternalLink } from "lucide-react"
+import { Github, Linkedin, Download, Menu, X, ExternalLink } from "lucide-react"
 
 export default function Portfolio() {
   const [currentText, setCurrentText] = useState(0)
@@ -69,8 +69,8 @@ export default function Portfolio() {
 
   const techStack = {
     Languages: ["Java", "Python", "C++", "SQL (Postgres)", "JavaScript", "HTML/CSS"],
-    Frameworks: ["React", "Next.js", "Django", "Scikit-Learn"],
-    "Developer Tools": ["Git", "VS Code", "Github"],
+    Frameworks: ["React", "Next.js", "Django", "Scikit-Learn", "TensorFlow"],
+    "Developer Tools": ["Git", "VS Code", "Github", "Claude Code"],
     Libraries: ["Pandas", "NumPy", "Matplotlib", "Axios", "Prisma", "Tailwind CSS"],
   }
 
@@ -88,10 +88,12 @@ export default function Portfolio() {
     "Next.js": { bg: "#000000", text: "white" },
     Django: { bg: "#092E20", text: "white" },
     "Scikit-Learn": { bg: "#F7931E", text: "white" },
+    TensorFlow: { bg: "#FF6F00", text: "white" },
     // Developer Tools
     Git: { bg: "#F05032", text: "white" },
     "VS Code": { bg: "#007ACC", text: "white" },
     Github: { bg: "#181717", text: "white" },
+    "Claude Code": { bg: "#D97757", text: "white" },
     // Libraries
     Pandas: { bg: "#150458", text: "white" },
     NumPy: { bg: "#013243", text: "white" },
@@ -121,11 +123,6 @@ export default function Portfolio() {
           border-color: #0077B5;
           color: white;
         }
-        .hero-instagram-icon:hover {
-          background-color: #E4405F;
-          border-color: #E4405F;
-          color: white;
-        }
         /* Navbar hover effects */
         .nav-item {
           position: relative;
@@ -149,9 +146,20 @@ export default function Portfolio() {
         .nav-item:hover::after {
           width: 100%;
         }
-        /* Footer social icons - NO hover effects */
+        /* Footer social icons hover effects */
         .footer-social-icon {
-          /* No special hover effects - just default button behavior */
+          transition: all 0.3s ease;
+        }
+        .footer-social-icon:hover {
+          transform: scale(1.2);
+        }
+        .footer-github-icon:hover {
+          background-color: #000000;
+          color: white;
+        }
+        .footer-linkedin-icon:hover {
+          background-color: #0077B5;
+          color: white;
         }
         /* Mobile menu specific styles */
         .mobile-menu-overlay {
@@ -178,6 +186,24 @@ export default function Portfolio() {
           top: 1rem;
           right: 1rem;
           z-index: 50;
+        }
+        /* Download resume button float + blue glow on hover */
+        .resume-button {
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+          will-change: transform;
+        }
+        .resume-button:hover {
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.55), 0 0 20px -4px rgba(59, 130, 246, 0.45);
+        }
+        /* Project card float/pop-up on hover */
+        .project-card {
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+          will-change: transform;
+        }
+        .project-card:hover {
+          transform: translateY(-12px) scale(1.02);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         /* Project image container styles */
         .project-image-container {
@@ -319,16 +345,16 @@ export default function Portfolio() {
               </div>
 
               <div className="space-y-4">
-                <p className="text-lg text-gray-600">BS in Computer Science</p>
+                <p className="text-lg text-gray-600">M.S. in Computer Science</p>
                 <p className="text-lg text-gray-600">The University of Texas at Dallas</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700"
+                <Button size="lg" className="resume-button bg-blue-600 hover:bg-blue-700"
                 onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'Pranav_Resume.pdf'; 
-                link.download = 'Pranav_Puppala_Resume.pdf';  
+                link.href = '/Pranav_Puppala_Resume_v1.pdf';
+                link.download = 'Pranav_Puppala_Resume.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -344,14 +370,6 @@ export default function Portfolio() {
                     onClick={() => window.open("https://github.com/PranavPuppala", "_blank")}
                   >
                     <Github className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="hero-social-icon hero-instagram-icon bg-transparent"
-                    onClick={() => window.open("https://www.instagram.com/pranav_puppala", "_blank")}
-                  >
-                    <Instagram className="h-4 w-4" />
                   </Button>
                   <Button
                     variant="outline"
@@ -380,8 +398,9 @@ export default function Portfolio() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
           <div className="text-lg text-gray-600 leading-relaxed">
             <p>
-              My name is Naga Pranav Puppala, and I'm a senior at the University of Texas at Dallas, pursuing a
-              Bachelor's degree in Computer Science. My areas of interest are web development and machine learning, and I
+              My name is Naga Pranav Puppala. I completed my Bachelor's degree in Computer Science at the University
+              of Texas at Dallas in May 2026, and I'm now pursuing a Master's degree in Computer Science there. My
+              areas of interest are web development and machine learning, and I
               am extremely passionate about these fields. I enjoy solving problems and collaborating with my peers to
               achieve common goals. I love learning new skills and taking on challenges that help me expand my knowledge.
             </p>
@@ -396,23 +415,72 @@ export default function Portfolio() {
 
           <Card className="mb-8">
             <CardHeader>
-              <CardTitle className="text-xl">Undergraduate Research Assistant</CardTitle>
-              <CardDescription className="text-lg">
-                The University of Texas at Dallas • Richardson, TX <br />
-                <span className="font-semibold">Feb 2024 – Present</span>
-              </CardDescription>
+              <div className="flex items-start gap-4">
+                <img
+                  src="/UTSW_logo.jpg"
+                  alt="UT Southwestern Medical Center"
+                  className="w-12 h-12 object-contain flex-shrink-0"
+                />
+                <div>
+                  <CardTitle className="text-xl">Software Engineer Intern (Capstone Project)</CardTitle>
+                  <CardDescription className="text-lg">
+                    UT Southwestern Medical Center • Dallas, TX <br />
+                    <span className="font-semibold">Feb 2026 – May 2026</span>
+                  </CardDescription>
+                </div>
+              </div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Participating in an undergraduate research group focused on developing advanced network intrusion
-                  detection systems using machine learning techniques.
+                  Built a hybrid RAG pipeline using LangChain, ChromaDB, BM25, and cross-encoder reranking to generate
+                  clinically accurate, persona-aware Major Depressive Disorder patient responses for psychiatric
+                  interview training.
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Trained machine learning models such as RandomForest, EllipticEnvelope, and regression techniques to
-                  identify anomalies in network traffic, focusing on detecting threats like SYN flood and DDoS attacks.
+                  Designed a synthetic persona generation pipeline that extracted structured clinical profiles from
+                  therapy transcripts using Groq and LLaMA, scored multi-dimensional patient similarity via ChromaDB,
+                  and synthesized blended MDD personas for real-time conversational simulation.
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Developed a real-time psychiatric patient simulation system with structured behavioral metadata
+                  tagging (mood, affect, and symptom) producing both natural dialogue and clinical JSON output.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="mb-8">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <img
+                  src="/UTD_logo.webp"
+                  alt="The University of Texas at Dallas"
+                  className="w-12 h-12 object-contain flex-shrink-0"
+                />
+                <div>
+                  <CardTitle className="text-xl">Undergraduate Research Assistant</CardTitle>
+                  <CardDescription className="text-lg">
+                    The University of Texas at Dallas • Richardson, TX <br />
+                    <span className="font-semibold">Feb 2024 – May 2025</span>
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Developed network intrusion detection systems using machine learning techniques including
+                  RandomForest, EllipticEnvelope, and regression models.
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Trained machine learning models to identify network traffic anomalies, focusing on SYN flood and
+                  DDoS attack detection.
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -424,13 +492,40 @@ export default function Portfolio() {
           </Card>
 
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Education</h3>
+          <Card className="mb-8">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <img
+                  src="/UTD_logo.webp"
+                  alt="The University of Texas at Dallas"
+                  className="w-12 h-12 object-contain flex-shrink-0"
+                />
+                <div>
+                  <CardTitle className="text-xl">Master of Science in Computer Science - Intelligent Systems</CardTitle>
+                  <CardDescription className="text-lg">
+                    University of Texas at Dallas <br />
+                    <span className="font-semibold">Aug 2026 – Dec 2027</span>
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+          </Card>
           <Card>
             <CardHeader>
-              <CardTitle className="text-xl">Bachelor of Science in Computer Science</CardTitle>
-              <CardDescription className="text-lg">
-                University of Texas at Dallas <br />
-                <span className="font-semibold">2023 – Present</span>
-              </CardDescription>
+              <div className="flex items-start gap-4">
+                <img
+                  src="/UTD_logo.webp"
+                  alt="The University of Texas at Dallas"
+                  className="w-12 h-12 object-contain flex-shrink-0"
+                />
+                <div>
+                  <CardTitle className="text-xl">Bachelor of Science in Computer Science</CardTitle>
+                  <CardDescription className="text-lg">
+                    University of Texas at Dallas <br />
+                    <span className="font-semibold">Jan 2023 – May 2026</span>
+                  </CardDescription>
+                </div>
+              </div>
             </CardHeader>
           </Card>
         </div>
@@ -444,7 +539,7 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow cursor-pointer overflow-hidden"
+                className="project-card cursor-pointer overflow-hidden"
                 style={{ paddingTop: '0px' }}
                 onClick={() => window.open(project.link, "_blank")}
               >
@@ -537,7 +632,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="footer-social-icon text-white"
+                className="footer-social-icon footer-github-icon text-white"
                 onClick={() => window.open("https://github.com/PranavPuppala", "_blank")}
               >
                 <Github className="h-5 w-5" />
@@ -545,22 +640,14 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="footer-social-icon text-white"
-                onClick={() => window.open("https://www.instagram.com/pranav_puppala", "_blank")}
-              >
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="footer-social-icon text-white"
+                className="footer-social-icon footer-linkedin-icon text-white"
                 onClick={() => window.open("https://www.linkedin.com/in/pranav-puppala", "_blank")}
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
             </div>
             <div className="border-t border-gray-800 pt-8">
-              <p className="text-gray-400">© 2025 Pranav Puppala. All rights reserved.</p>
+              <p className="text-gray-400">© 2026 Pranav Puppala. All rights reserved.</p>
             </div>
           </div>
         </div>
