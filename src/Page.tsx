@@ -59,19 +59,19 @@ export default function Portfolio() {
       link: "https://resume-analyzer-indol.vercel.app/"
     },
     {
-      title: "Commerce-Electronics",
-      description: "Full-stack e-commerce website",
-      image: "/Commerce-Electronics.jpeg",
-      tech: ["Next.js", "Prisma", "PostgreSQL"],
-      link: "https://github.com/PranavPuppala/Ecommerce-Website"
+      title: "KnowledgeAtlas",
+      description: "RAG app for citation-backed answers from your PDFs",
+      image: "/KnowledgeAtlas.png",
+      tech: ["Django REST", "React", "LangChain", "Celery", "Docker"],
+      link: "https://github.com/PranavPuppala/KnowledgeAtlas"
     },
   ]
 
   const techStack = {
     Languages: ["Java", "Python", "C++", "SQL (Postgres)", "JavaScript", "HTML/CSS"],
     Frameworks: ["React", "Next.js", "Django", "Scikit-Learn", "TensorFlow"],
-    "Developer Tools": ["Git", "VS Code", "Github", "Claude Code"],
-    Libraries: ["Pandas", "NumPy", "Matplotlib", "Axios", "Prisma", "Tailwind CSS"],
+    "Developer Tools": ["Git", "VS Code", "Github", "Claude Code", "Docker"],
+    Libraries: ["Pandas", "NumPy", "Matplotlib", "Axios", "Prisma", "Tailwind CSS", "LangChain", "Redis", "Celery", "ChromaDB"],
   }
 
   // Official brand colors for technologies
@@ -87,8 +87,12 @@ export default function Portfolio() {
     React: { bg: "#61DAFB", text: "black" },
     "Next.js": { bg: "#000000", text: "white" },
     Django: { bg: "#092E20", text: "white" },
+    "Django REST": { bg: "#A30000", text: "white" },
     "Scikit-Learn": { bg: "#F7931E", text: "white" },
     TensorFlow: { bg: "#FF6F00", text: "white" },
+    LangChain: { bg: "#1C3C3C", text: "white" },
+    Celery: { bg: "#37814A", text: "white" },
+    Docker: { bg: "#2496ED", text: "white" },
     // Developer Tools
     Git: { bg: "#F05032", text: "white" },
     "VS Code": { bg: "#007ACC", text: "white" },
@@ -101,6 +105,8 @@ export default function Portfolio() {
     Axios: { bg: "#5A29E4", text: "white" },
     Prisma: { bg: "#2D3748", text: "white" },
     "Tailwind CSS": { bg: "#06B6D4", text: "white" },
+    Redis: { bg: "#DC382D", text: "white" },
+    ChromaDB: { bg: "#4B3F72", text: "white" },
   }
 
   return (
@@ -353,7 +359,7 @@ export default function Portfolio() {
                 <Button size="lg" className="resume-button bg-blue-600 hover:bg-blue-700"
                 onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/Pranav_Puppala_Resume_v1.pdf';
+                link.href = '/Pranav_Puppala_Resume_v2.pdf';
                 link.download = 'Pranav_Puppala_Resume.pdf';
                 document.body.appendChild(link);
                 link.click();
@@ -396,13 +402,23 @@ export default function Portfolio() {
       <section id="about" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
-          <div className="text-lg text-gray-600 leading-relaxed">
+          <div className="text-lg text-gray-600 leading-relaxed space-y-6">
             <p>
-              My name is Naga Pranav Puppala. I completed my Bachelor's degree in Computer Science at the University
-              of Texas at Dallas in May 2026, and I'm now pursuing a Master's degree in Computer Science there. My
-              areas of interest are web development and machine learning, and I
-              am extremely passionate about these fields. I enjoy solving problems and collaborating with my peers to
-              achieve common goals. I love learning new skills and taking on challenges that help me expand my knowledge.
+              I'm Pranav Puppala, a Computer Science graduate from the University of Texas at Dallas and currently a
+              Master's student in Computer Science at UTD.
+            </p>
+            <p>
+              I enjoy building software from the ground up, with a particular interest in backend development. I
+              like designing APIs, working with databases, and thinking about how different pieces of a system fit
+              together. I'm also increasingly interested in AI engineering and exploring how AI agents and LLMs can
+              be used to create software that goes beyond simple demonstrations and solves real problems.
+            </p>
+            <p>
+              While backend development is where I feel most at home, I enjoy working across the stack and have
+              experience with React and JavaScript as well. I'm naturally curious and enjoy learning by building,
+              whether that means picking up a new technology, tackling a difficult problem, or experimenting with a
+              new idea. I also enjoy collaborating with others and believe some of the best software comes from
+              combining different perspectives.
             </p>
           </div>
         </div>
