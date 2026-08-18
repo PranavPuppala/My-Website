@@ -11,7 +11,7 @@ export default function Portfolio() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const texts = ["Computer Science Student", "Machine Learning Enthusiast", "Aspiring Full Stack Developer"]
+  const texts = ["Computer Science Student", "Backend Engineer", "Aspiring AI Engineer"]
 
   useEffect(() => {
     const timeout = setTimeout(
@@ -48,15 +48,15 @@ export default function Portfolio() {
       title: "ExpenseTracker",
       description: "Full-stack expenses tracking application",
       image: "/ExpenseTracker.jpeg",
-      tech: ["React", "Django", "PostgreSQL"],
+      tech: ["React", "Django", "PostgreSQL", "JWT"],
       link: "https://github.com/PranavPuppala/ExpenseTracker-App"
     },
     {
-      title: "Resumind",
-      description: "AI powered resume analyzer",
-      image: "/Resumind.jpeg",
-      tech: ["React"],
-      link: "https://resume-analyzer-indol.vercel.app/"
+      title: "EDA Agent",
+      description: "Autonomous LangGraph agent that explores CSVs and writes reports",
+      image: "/EDAAgent.png",
+      tech: ["Django REST", "React", "LangGraph", "Groq", "Pandas"],
+      link: "https://github.com/PranavPuppala/EDA-Agent"
     },
     {
       title: "KnowledgeAtlas",
@@ -71,7 +71,7 @@ export default function Portfolio() {
     Languages: ["Java", "Python", "C++", "SQL (Postgres)", "JavaScript", "HTML/CSS"],
     Frameworks: ["React", "Next.js", "Django", "Scikit-Learn", "TensorFlow"],
     "Developer Tools": ["Git", "VS Code", "Github", "Claude Code", "Docker"],
-    Libraries: ["Pandas", "NumPy", "Matplotlib", "Axios", "Prisma", "Tailwind CSS", "LangChain", "Redis", "Celery", "ChromaDB"],
+    Libraries: ["Pandas", "NumPy", "Matplotlib", "Axios", "Prisma", "Tailwind CSS", "LangChain", "LangGraph", "Groq", "Redis", "Celery", "ChromaDB"],
   }
 
   // Official brand colors for technologies
@@ -88,9 +88,12 @@ export default function Portfolio() {
     "Next.js": { bg: "#000000", text: "white" },
     Django: { bg: "#092E20", text: "white" },
     "Django REST": { bg: "#A30000", text: "white" },
+    JWT: { bg: "#D63AFF", text: "white" },
     "Scikit-Learn": { bg: "#F7931E", text: "white" },
     TensorFlow: { bg: "#FF6F00", text: "white" },
     LangChain: { bg: "#1C3C3C", text: "white" },
+    LangGraph: { bg: "#1C3C3C", text: "white" },
+    Groq: { bg: "#F55036", text: "white" },
     Celery: { bg: "#37814A", text: "white" },
     Docker: { bg: "#2496ED", text: "white" },
     // Developer Tools
@@ -359,7 +362,7 @@ export default function Portfolio() {
                 <Button size="lg" className="resume-button bg-blue-600 hover:bg-blue-700"
                 onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/Pranav_Puppala_Resume_v2.pdf';
+                link.href = '/Pranav_Puppala_Resume_v3.pdf';
                 link.download = 'Pranav_Puppala_Resume.pdf';
                 document.body.appendChild(link);
                 link.click();
@@ -450,20 +453,18 @@ export default function Portfolio() {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Built a hybrid RAG pipeline using LangChain, ChromaDB, BM25, and cross-encoder reranking to generate
-                  clinically accurate, persona-aware Major Depressive Disorder patient responses for psychiatric
-                  interview training.
+                  Built a hybrid RAG pipeline using vector retrieval and cross-encoder reranking to generate
+                  persona-aware patient simulation responses for medical training.
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Designed a synthetic persona generation pipeline that extracted structured clinical profiles from
-                  therapy transcripts using Groq and LLaMA, scored multi-dimensional patient similarity via ChromaDB,
-                  and synthesized blended MDD personas for real-time conversational simulation.
+                  Designed a synthetic persona generation pipeline that extracts structured clinical profiles from
+                  conversational transcripts to enable real-time simulation.
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Developed a real-time psychiatric patient simulation system with structured behavioral metadata
-                  tagging (mood, affect, and symptom) producing both natural dialogue and clinical JSON output.
+                  Developed a real-time patient simulation system with structured behavioral metadata tagging to
+                  output natural dialogue and structured JSON schema.
                 </li>
               </ul>
             </CardContent>
@@ -642,7 +643,7 @@ export default function Portfolio() {
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">Pranav Puppala</h3>
             <p className="text-gray-400 mb-6">
-              Computer Science Student | Machine Learning Enthusiast | Aspiring Full Stack Developer
+              Computer Science Student | Backend Engineer | Aspiring AI Engineer
             </p>
             <div className="flex justify-center space-x-6 mb-8">
               <Button
