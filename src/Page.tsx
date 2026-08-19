@@ -580,15 +580,17 @@ export default function Portfolio() {
           <div className="mt-8">
             {education.map((e, i) => (
               <Reveal key={e.degree} delay={i * 80}>
-                <div className="v4-exp-row px-4 -mx-4 py-6 rounded-lg flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+                <div className="v4-exp-row px-4 -mx-4 py-6 rounded-lg">
                   <div className="flex items-center gap-4">
                     <img src={e.logo} alt={e.org} className="w-11 h-11 object-contain flex-shrink-0" />
-                    <div>
-                      <h3 className="v4-serif text-lg">{e.degree}</h3>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                        <h3 className="v4-serif text-lg">{e.degree}</h3>
+                        <span className="text-sm font-medium" style={{ color: "var(--accent)" }}>{e.period}</span>
+                      </div>
                       <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>{e.org}</p>
                     </div>
                   </div>
-                  <span className="text-sm font-medium" style={{ color: "var(--accent)" }}>{e.period}</span>
                 </div>
               </Reveal>
             ))}
