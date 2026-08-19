@@ -766,7 +766,7 @@ export default function Portfolio() {
       <section id="about" className="px-6 py-28 relative z-10">
         <div className="max-w-3xl mx-auto">
           <Reveal>
-            <div className="v3-section-tag">01 · About</div>
+            <div className="v3-section-tag">About</div>
             <h2 className="v3-section-heading">Backend-first, AI-curious.</h2>
           </Reveal>
           <div className="mt-8 space-y-5 text-lg leading-relaxed" style={{ color: "var(--muted)" }}>
@@ -803,7 +803,7 @@ export default function Portfolio() {
       <section id="experience" className="px-6 py-28 relative z-10">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <div className="v3-section-tag">02 · Experience</div>
+            <div className="v3-section-tag">Experience</div>
             <h2 className="v3-section-heading">Where I've worked.</h2>
           </Reveal>
 
@@ -839,7 +839,7 @@ export default function Portfolio() {
           </div>
 
           <Reveal className="mt-20">
-            <div className="v3-section-tag">03 · Education</div>
+            <div className="v3-section-tag">Education</div>
             <h2 className="v3-section-heading">Academic background.</h2>
           </Reveal>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -865,7 +865,7 @@ export default function Portfolio() {
       <section id="projects" className="px-6 py-28 relative z-10">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="v3-section-tag">04 · Projects</div>
+            <div className="v3-section-tag">Projects</div>
             <h2 className="v3-section-heading">Things I've built.</h2>
           </Reveal>
 
@@ -910,7 +910,7 @@ export default function Portfolio() {
       <section id="skills" className="px-6 py-28 relative z-10">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="v3-section-tag">05 · Skills</div>
+            <div className="v3-section-tag">Skills</div>
             <h2 className="v3-section-heading">Tools I reach for.</h2>
           </Reveal>
 
@@ -944,7 +944,7 @@ export default function Portfolio() {
       <section id="contact" className="px-6 py-28 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
-            <div className="v3-section-tag">06 · Contact</div>
+            <div className="v3-section-tag">Contact</div>
             <h2 className="v3-section-heading">
               Let's build something <span className="v3-gradient-text">worth shipping.</span>
             </h2>
@@ -978,7 +978,7 @@ export default function Portfolio() {
 
         <div className="v3-divider max-w-6xl mx-auto mt-24 mb-8" />
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: "var(--muted)" }}>
-          <span>© 2026 Naga Pranav Puppala</span>
+          <span>© 2026 Pranav Puppala</span>
           <div className="flex items-center gap-6">
             <button onClick={downloadResume} className="v3-link-underline">Résumé</button>
             <a href="https://github.com/PranavPuppala" target="_blank" rel="noreferrer" className="v3-link-underline">GitHub</a>
