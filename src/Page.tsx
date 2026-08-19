@@ -7,7 +7,7 @@ import { Github, Linkedin, Download, Menu, X, ExternalLink, ArrowUp, Sparkles } 
 /*  Data                                                                */
 /* ------------------------------------------------------------------ */
 
-const RESUME_PATH = "/Pranav_Puppala_Resume_v3.pdf"
+const RESUME_PATH = "/Pranav_Puppala_Resume_v4.pdf"
 
 const projects = [
   {
