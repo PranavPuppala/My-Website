@@ -7,7 +7,7 @@ import { Github, Linkedin, Download, Menu, X, ArrowUpRight, ArrowUp } from "luci
 /*  Data                                                                */
 /* ------------------------------------------------------------------ */
 
-const RESUME_PATH = "/Pranav_Puppala_Resume_v5.pdf"
+const RESUME_PATH = "/Pranav_Puppala_Resume_v6.pdf"
 
 const projects = [
   {
