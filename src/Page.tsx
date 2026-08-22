@@ -41,9 +41,9 @@ const experience = [
     period: "Feb 2026 – May 2026",
     logo: "/UTSW_logo.jpg",
     points: [
+      "Was part of a team selected from 100+ competing teams to develop an AI-powered patient simulation system for psychiatric interview training at UT Southwestern Medical Center.",
       "Built a hybrid RAG pipeline using vector retrieval and cross-encoder reranking to generate persona-aware patient simulation responses for medical training.",
       "Designed a synthetic persona generation pipeline that extracts structured clinical profiles from conversational transcripts to enable real-time simulation.",
-      "Developed a real-time patient simulation system with structured behavioral metadata tagging to output natural dialogue and structured JSON schema.",
     ],
   },
   {
