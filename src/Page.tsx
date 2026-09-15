@@ -37,9 +37,10 @@ const experience = [
   {
     role: "API and Platform Engineer",
     org: "Nebula Labs",
-    location: "",
+    location: "Richardson, TX",
     period: "Sep 2026 – Present",
     logo: "/NebulaLabs_logo.jpg",
+    logoZoom: 2.2,
     points: [],
   },
   {
@@ -559,7 +560,18 @@ export default function Portfolio() {
               <Reveal key={job.role} delay={i * 80}>
                 <div className="v4-exp-row px-4 -mx-4 py-8 rounded-lg">
                   <div className="flex items-start gap-4">
-                    <img src={job.logo} alt={job.org} className="w-11 h-11 object-contain flex-shrink-0" />
+                    <div className="w-11 h-11 flex-shrink-0 overflow-hidden flex items-center justify-center">
+                      <img
+                        src={job.logo}
+                        alt={job.org}
+                        className="object-cover"
+                        style={
+                          job.logoZoom
+                            ? { width: `${job.logoZoom * 100}%`, height: `${job.logoZoom * 100}%` }
+                            : { width: "100%", height: "100%" }
+                        }
+                      />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                         <h3 className="v4-serif text-xl">{job.role}</h3>
