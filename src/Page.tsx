@@ -35,6 +35,14 @@ const projects = [
 
 const experience = [
   {
+    role: "API and Platform Engineer",
+    org: "Nebula Labs",
+    location: "",
+    period: "Sep 2026 – Present",
+    logo: "/NebulaLabs_logo.jpg",
+    points: [],
+  },
+  {
     role: "Software Engineer Intern (Capstone Project)",
     org: "UT Southwestern Medical Center",
     location: "Dallas, TX",
@@ -557,15 +565,19 @@ export default function Portfolio() {
                         <h3 className="v4-serif text-xl">{job.role}</h3>
                         <span className="text-sm font-medium" style={{ color: "var(--accent)" }}>{job.period}</span>
                       </div>
-                      <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>{job.org} · {job.location}</p>
-                      <ul className="mt-4 space-y-2.5">
-                        {job.points.map((p, k) => (
-                          <li key={k} className="flex gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                            <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "var(--accent)" }} />
-                            <span>{p}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>
+                        {job.org}{job.location ? ` · ${job.location}` : ""}
+                      </p>
+                      {job.points.length > 0 && (
+                        <ul className="mt-4 space-y-2.5">
+                          {job.points.map((p, k) => (
+                            <li key={k} className="flex gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                              <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "var(--accent)" }} />
+                              <span>{p}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </div>
